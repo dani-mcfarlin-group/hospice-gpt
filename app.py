@@ -17,7 +17,6 @@ if st.button("Submit"):
            response = client.chats.Completion.create(
                model="gpt-3.5-turbo-instruct",
                messages=user_query,
-               temperature=1
 	   )
            st.success("Response:")
            st.write(response.choices[0].text.strip())

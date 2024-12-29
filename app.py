@@ -18,6 +18,8 @@ if st.button("Submit"):
                engine="text-davinci-003",
                prompt=user_query,
                max_tokens=200
-	            )
+	   )
            st.success("Response:")
            st.write(response.choices[0].text.strip())
+       except Exception as e:
+           st.error("An error occurred. Please check your input or try again.")

@@ -14,10 +14,10 @@ user_query = st.text_area("Your Query:")
 if st.button("Submit"):
     with ((((st.spinner("Generating response..."))))):
        try:
-           response = openai.Completion.create(
-               engine="gpt-3.5-turbo-instruct",
-               prompt=user_query,
-               max_tokens=200
+           response = client.chats.Completion.create(
+               model="gpt-3.5-turbo-instruct",
+               messages=user_query,
+               temperature=1
 	   )
            st.success("Response:")
            st.write(response.choices[0].text.strip())

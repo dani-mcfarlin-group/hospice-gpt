@@ -3,8 +3,7 @@ import openai
 from openai import OpenAI
 
 # Add your OpenAI API key
-openai_api_key = st.secrets["openai_api_key"]["key"]
-client = OpenAI(api_key=openai_api_key)
+openai.api_key = st.secrets["openai_api_key"]
 
 st.title("Medicare Hospice Compliance GPT")
 st.write("Enter your query below to receive compliance guidance.")

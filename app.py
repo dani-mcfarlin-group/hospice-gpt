@@ -22,5 +22,5 @@ if st.button("Submit"):
            st.success("Response:")
            st.write(response.choices[0].text.strip())
        except Exception as e:
-	       print(f"Error: {e}")
            st.error("An error occurred. Please check your input or try again.")
+	print(f"Error: {e}")

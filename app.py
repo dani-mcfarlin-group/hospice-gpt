@@ -1,8 +1,10 @@
 import streamlit as st
 import openai
+from openai import OpenAI
 
 # Add your OpenAI API key
-openai.api_key = "your-api-key"
+openai.api_key = st.secrets["openai.api_key"]["key"]
+client = OpenAI(api_key=openai.api_key)
 
 st.title("Medicare Hospice Compliance GPT")
 st.write("Enter your query below to receive compliance guidance.")
